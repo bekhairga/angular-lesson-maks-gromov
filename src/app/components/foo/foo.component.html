@@ -1,0 +1,34 @@
+<h6>Attributes</h6>>
+<!--static attributes-->
+<p title="title">some</p>
+<!--dynamic attributes using bindings-->
+<p [title]="name + 12">some</p>
+<!--usage of draggable-->
+<p [draggable]="true">something draggable</p>
+<!--creating custom attributes using attr-->
+<p [attr.data-foo]="123">Custom attribute</p>
+<!--with attr any attribute can be working-->
+<p [attr.draggable]="true">Custom attribute</p>
+
+<!--exceptions, usage of attributes by camelCase-->
+<td colspan="1">some</td>
+<td [colSpan]="1">some</td>
+<td [attr.colspan]="1">some</td>
+
+
+<h6>Class</h6>
+<p class="red">some</p>
+<!--several classes as bindings-->
+<p [class.blue]="true" [class.red]="true" [class.yellow]="true">some</p>
+<!--several classes using array-->
+<p [class]="['red', 'blue', 'yellow']">some</p>
+<!--using object whether to show class or not-->
+<!--first value is class name, second is condition when to add it-->
+<p [class]="{red: true, yellow: false, 'dark-brow': true}">some</p>
+
+<h6>Styles</h6>
+<p [style.background-color]="'red'">some</p>
+<!--using %, px, and etc measures-->
+<p [style.background-color]="'blue'" [style.width.%]="50">some</p>
+<!--using object as value-->
+<p [style]="{backgroundColor: 'green', maxWidth: '50px'}">some</p>

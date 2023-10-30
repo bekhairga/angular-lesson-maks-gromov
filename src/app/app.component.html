@@ -10,5 +10,28 @@
 <body>
 <h1>Hello world</h1>
 <p class="something">variable {{title}}</p>
+
+<p>Here is our work</p>
+<!-- {{}} it is interpolation-->
+<p title="{{name}}">{{name}}</p>
+<!--[] attribute bindings, inside goes js code-->
+<p [title]="name"></p>
+<!--try to not use it, dangerous-->
+<p [innerHTML]="myInnerHTML()"></p>
+
+<!--again usage of binding and also creating two way binding-->
+<input (input)="changeName($event)" value="{{name}}"/>
+<br/>
+<input (input)="changeName($event)" [value]="name"/>
+
+<!--usage of ngModel-->
+<br/>
+<input [(ngModel)]="surname" type="text">
+<p>{{surname}}</p>
+
+<!--[(ngModel)] does under the hood-->
+<br/>
+<input (ngModelChange)="surname=$event" [ngModel]="surname" type="text">
+<p>{{surname}}</p>
 </body>
 </html>

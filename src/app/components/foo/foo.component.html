@@ -1,0 +1,25 @@
+<button (click)="expression=!expression">Change Expression</button>
+<div *ngIf="expression; else: elseCase">I am okay</div>
+// elseCase is a template variable, that we can use only in template -> html
+<ng-template #elseCase>
+  <div>I am bad</div>
+</ng-template>
+
+<hr>
+<button (click)="generateUser()">Generate user</button>
+<button (click)="deepObj=null">Delete User</button>
+
+// * is a symbol to show that it is a structural directive, it can be used only once for an element
+<ul *ngIf="deepObj?.user as user">
+  <li>{{user.name}}</li>
+  <li>{{user.surname}}</li>
+</ul>
+
+<hr>
+<ul>
+  <li *ngFor="let user of users; index as index; trackBy: trackBy" [ngSwitch]="user.template">
+    <b *ngSwitchCase="'bold'">{{index}} {{user.name}}</b>
+    <i *ngSwitchCase="'italic'">{{index}} {{user.name}}</i>
+    <p *ngSwitchDefault style="text-decoration: underline">{{index}} {{user.name}}</p>
+  </li>
+</ul>

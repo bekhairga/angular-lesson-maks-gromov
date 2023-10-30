@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-tutorial';
+  name = '';
+  surname = '';
+  email = '';
+
+  handleSubmit(event: Event) {
+    event.preventDefault();
+    if (this.email !== '' && this.name !== '' && this.surname !== '') {
+      alert('Everything is valid, success submission');
+      return;
+    }
+    alert('Please write valid fields');
+  }
 }

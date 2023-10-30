@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-tutorial';
+  name = 'name';
+  surname = 'surname';
+  email = '';
+
+  changeName(event: Event) {
+    this.name = (event.target as HTMLInputElement).value;
+  }
+
+  myInnerHTML() {
+    return '<p>Hello from inner html</p>';
+  }
 }

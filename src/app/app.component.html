@@ -1,14 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        name="viewport">
-  <meta content="ie=edge" http-equiv="X-UA-Compatible">
-  <title>Angular Tutorial</title>
-</head>
-<body>
-<h1>Hello world</h1>
-<p class="something">variable {{title}}</p>
-</body>
-</html>
+<!--to access methods of children we can use template symbol #menu, and then menu.hide()-->
+
+<div>
+  <button (click)="menu.show()">Open menu</button>
+  <app-menu #menu>
+    <p>From App Component 1</p>
+  </app-menu>
+</div>
+
+<!--creating separate menus using different template name-->
+<div>
+  <button (click)="menu1.show()">Open menu</button>
+  <app-menu #menu1>
+    <p>From App Component 2</p>
+  </app-menu>
+</div>
+
+<div>
+  <button (click)="menu2.show()">Open menu</button>
+  <app-menu #menu2>
+    <p>From App Component 3</p>
+  </app-menu>
+</div>

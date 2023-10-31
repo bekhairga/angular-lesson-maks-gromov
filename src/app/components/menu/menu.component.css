@@ -1,0 +1,13 @@
+/*to get hostBinding, we use :host-context*/
+:host-context(.hidden){
+  display: none;
+}
+/*for the host that doesn't have a class, now "hidden"*/
+:host{
+  position: relative;
+  .menu{
+    position: absolute;
+    background-color: #ccc;
+    border: 1px solid black;
+  }
+}

@@ -1,2 +1,3 @@
-<app-foo (sayHi)="sayHi($event)" [(counter)]="age" [title]="expression ? 'one' : 'two'"></app-foo>
+<!--input files are [], output files are ()-->
+<app-foo (sayHi)="sayHi($event)" [(counter)]="age" [foobar]="myFoo" [title]="expression ? 'one' : 'two'"></app-foo>
 <button (click)="expression=!expression">Click</button>

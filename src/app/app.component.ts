@@ -10,6 +10,7 @@ export class AppComponent {
   expression = false;
 
   age = 23;
+  myFoo = '12312';
 
   sayHi(text: string) {
     // receiving data from child

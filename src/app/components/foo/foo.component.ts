@@ -23,6 +23,11 @@ export class FooComponent {
   @Output()
   counterChange = new EventEmitter<number>();
 
+
+  // changing props name using @Input foobar will be pointed to foo variable in class
+  // it is a bad practice
+  @Input('foobar') foo: string = '';
+
   // constructor doesn't know about title
   constructor() {
     console.log(this.title);

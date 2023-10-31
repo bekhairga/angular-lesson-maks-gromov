@@ -1,14 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        name="viewport">
-  <meta content="ie=edge" http-equiv="X-UA-Compatible">
-  <title>Angular Tutorial</title>
-</head>
-<body>
-<h1>Hello world</h1>
-<p class="something">variable {{title}}</p>
-</body>
-</html>
+<ng-template #appTemplate let-item>
+  <p>Tempalte from parent {{item}}</p>
+</ng-template>
+
+<app-foo [template]="appTemplate">
+  <header class="header">Header</header>
+  <p class="body">Body</p>
+  <footer class="footer">Footer</footer>
+</app-foo>
+
+

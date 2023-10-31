@@ -1,0 +1,40 @@
+<!--select is a css selector, here we take header from children, and rending it above, below won't be rendered header-->
+<ng-content select=".header"></ng-content>
+<p>foo works!</p>
+<ng-content></ng-content>
+
+<!--using template-->
+
+<!--ref is a name of template to render-->
+<!--let-foo="foo", means that we are taking a key from context provided by ngTemplateOutlet-->
+<!--let-anyWord, we are taking $implicit value, or default-->
+<ng-template #ref let-foo="foo" let-number>
+  <p>I am template {{foo}} </p>
+  <p>{{number}}</p>
+</ng-template>
+<!--in ngTemplateOutlet we are passing our template as a variable-->
+<!--second argument is a context, which we want to provide-->
+<ng-container *ngTemplateOutlet="ref; context:{foo: 123, $implicit: 'something'}"></ng-container>
+
+<!--ngFor and ngIf usage-->
+
+<!--Here div is being generated, but what if we don't want to generate it-->
+<div *ngIf="true">
+  <div *ngFor="let i of [1,2,3]">{{i}}</div>
+</div>
+<!--using ng-container like this we won't generate a div, as above-->
+<ng-container *ngIf="true">
+  <div *ngFor="let i of [1,2,3]">{{i}}</div>
+</ng-container>
+
+<hr />
+<!--ngTemplate that is sent from parent-->
+
+<ng-template #defaultTemplate let-item="item">
+  <p>Default template {{item}}</p>
+</ng-template>
+
+<div *ngFor="let item of [1,2,3]">
+<!--  template from parent or default template -->
+  <ng-container *ngTemplateOutlet="template || defaultTemplate context:{$implicit: item}"></ng-container>
+</div>
